@@ -263,4 +263,6 @@ sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 
 - <leader>f 在 NvimTree 中显示当前打开的文件
 
+- 添加以及修改包裹符号，包括括号、引号等等，比如我常用的一个功能，选中一个词，按大写 S，再按下想要将其包裹的符号，比如引号，就可以快速将其包裹上引号
+
 [教程](https://sspai.com/post/90115)
