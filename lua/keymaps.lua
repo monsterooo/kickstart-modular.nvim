@@ -46,3 +46,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- 保存快捷键
+vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save file' })
+vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { desc = 'Save file' })
+vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>', { desc = 'Save file' })

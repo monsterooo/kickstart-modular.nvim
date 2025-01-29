@@ -69,3 +69,7 @@ vim.g.loaded_netrwPlugin = 1
 
 -- bufferline
 vim.opt.termguicolors = true
+
+vim.opt.tabstop = 2       -- 设置 tab 的显示宽度为 2 个空格
+vim.opt.shiftwidth = 2    -- 设置自动缩进的宽度为 2 个空格
+vim.opt.expandtab = true  -- 将 tab 转换为空格
