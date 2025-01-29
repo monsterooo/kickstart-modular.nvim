@@ -262,3 +262,5 @@ sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 - Control + n 显示/隐藏 NvimTree
 
 - <leader>f 在 NvimTree 中显示当前打开的文件
+
+[教程](https://sspai.com/post/90115)

@@ -11,7 +11,11 @@
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  {
+    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
+
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -49,6 +53,8 @@ require('lazy').setup({
   require 'kickstart/plugins/nvim-tree',
 
   require 'kickstart/plugins/supermaven',
+
+  require 'kickstart/plugins/comment',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
