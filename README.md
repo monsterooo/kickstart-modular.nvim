@@ -265,4 +265,6 @@ sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 
 - 添加以及修改包裹符号，包括括号、引号等等，比如我常用的一个功能，选中一个词，按大写 S，再按下想要将其包裹的符号，比如引号，就可以快速将其包裹上引号
 
+- vim 中使用终端：使用 ctrl+\ 来打开终端，或者也可以用命令 ToggleTerm 来打开终端，使用快捷键 jk 来进入「vim 模式」，从而用 vim 快捷键复制当前终端中的任意内容，快捷键 i 回到终端模式
+
 [教程](https://sspai.com/post/90115)
