@@ -209,6 +209,62 @@ return {
         },
       }
 
+      -- Dart LSP 如果不需要可以删除
+      local lsp_config = require('lspconfig')
+      local dartExcludedFolders = {
+        vim.fn.expand("$HOME/AppData/Local/Pub/Cache"),
+        vim.fn.expand("$HOME/.pub-cache"),
+        vim.fn.expand("/opt/homebrew/"),
+        -- 你的flutter sdk目录
+        vim.fn.expand("$HOME/Desktop/flutter-sdk/flutter"),
+      }
+      lsp_config["dcmls"].setup({
+        capabilities = capabilities,
+        cmd = {
+          "dcm",
+          "start-server",
+        },
+        filetypes = { "dart", "yaml" },
+        settings = {
+          dart = {
+            analysisExcludedFolders = dartExcludedFolders,
+          },
+        },
+      })
+      lsp_config["dartls"].setup({
+        capabilities = capabilities,
+        cmd = {
+          "dart",
+          "language-server",
+          "--protocol=lsp",
+          -- "--port=8123",
+          -- "--instrumentation-log-file=/Users/robertbrunhage/Desktop/lsp-log.txt",
+        },
+        filetypes = { "dart" },
+        init_options = {
+          onlyAnalyzeProjectsWithOpenFiles = false,
+          suggestFromUnimportedLibraries = true,
+          closingLabels = true,
+          outline = false,
+          flutterOutline = false,
+        },
+        settings = {
+          dart = {
+            analysisExcludedFolders = dartExcludedFolders,
+            updateImportsOnRename = true,
+            completeFunctionCalls = true,
+            showTodos = true,
+          },
+        },
+      })
+      -- Dart LSP End
+
+
+      vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+			vim.keymap.set("n", "<leader>dl", vim.diagnostic.setqflist)
+
       -- Ensure the servers and tools above are installed
       --
       -- To check the current status of installed tools and/or manually install
